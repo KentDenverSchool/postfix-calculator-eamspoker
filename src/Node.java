@@ -5,8 +5,7 @@
  * Date: 9/11/19
  * On my honor: EA
  */
-//Jakes comments: everything looks good, you might need to make it so your .equals can take in any object, 
-//not just a node but I think that is optional. 
+
 public class Node<T> {
     //T as in type
     private T data;
@@ -52,7 +51,7 @@ public class Node<T> {
     }
 
     //accessor: returns the item behind the data
-    public Node getBehind(){
+    public Node getBack(){
         return this.back;
     }
 
@@ -67,7 +66,7 @@ public class Node<T> {
     }
 
     //mutator: initialize back to given value
-    public void setBehind(Node back){
+    public void setBack(Node back){
         this.back = back;
     }
 
