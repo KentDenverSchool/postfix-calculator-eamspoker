@@ -4,7 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class StackDriver {
+public class PostfixDriver {
     public static void main(String[] args)
             throws IOException{
 
@@ -16,7 +16,8 @@ public class StackDriver {
         String results = "_________Postfix Test_________"+
                 "\n\nTests in format passed: true/false expected: actual: \n\n";
         int calculated = PostfixCalculator.calculate(fr.nextLine());
-        results += "" + calculated == 42 + " expected: 42" + " actual: " + calculated;
+        results += "" + (calculated == 42);
+        results += " expected: 42" + " actual: " + calculated;
 
 
 

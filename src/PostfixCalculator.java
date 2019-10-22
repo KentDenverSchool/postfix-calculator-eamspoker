@@ -5,6 +5,9 @@ public class PostfixCalculator {
         mainStack = new Stack();
         String[] instructions = equation.split(" ");
 
+
+
+        System.out.println();
         for(int i = 0; i < instructions.length; i++){
             if(instructions[i].equals("+") || instructions[i].equals("-") || instructions[i].equals("*") ||
                     instructions[i].equals("/") || instructions[i].equals("%")){
@@ -14,17 +17,27 @@ public class PostfixCalculator {
                 switch(instructions[i]){
                     case "+":
                         result = first + second;
+                        break;
                     case "-":
                         result = first - second;
+                        break;
+
                     case "*":
-                        result = first / second;
-                    case "/":
                         result = first * second;
+                        break;
+
+                    case "/":
+                        result = first / second;
+                        break;
+
                     case "%":
                         result = first % second;
+                        break;
                 }
 
                 mainStack.push(result);
+
+
             } else {
                 mainStack.push(instructions[i].charAt(0) - '0');
             }

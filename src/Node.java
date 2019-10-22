@@ -52,7 +52,7 @@ public class Node<T> {
     }
 
     //accessor: returns the item behind the data
-    public Node getBehind(){
+    public Node getBack(){
         return this.back;
     }
 
@@ -67,7 +67,7 @@ public class Node<T> {
     }
 
     //mutator: initialize back to given value
-    public void setBehind(Node back){
+    public void setBack(Node back){
         this.back = back;
     }
 
