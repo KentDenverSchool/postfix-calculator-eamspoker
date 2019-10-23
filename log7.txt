@@ -1,0 +1,9 @@
+_________Postfix Test_________
+
+Tests in format passed: true/false expected: actual: 
+
+true expected: 2 actual: 2
+true expected: empty stack exception actual: java.util.EmptyStackException
+true expected: empty stack exception actual: java.util.EmptyStackException
+true expected: -1 actual: -1
+true expected: -4 actual: -4
