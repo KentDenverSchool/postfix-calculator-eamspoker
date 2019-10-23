@@ -42,7 +42,7 @@ public class PostfixDriver {
             results += "\n";
         }
 
-
+        //creates new logfile
         Scanner sys = new Scanner(System.in);
         System.out.println("enter log name");
         BufferedWriter writer = new BufferedWriter(new FileWriter(sys.nextLine()));
