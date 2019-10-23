@@ -12,69 +12,35 @@ public class PostfixDriver {
             throws IOException{
 
 
+        //read in new file for tests
         File testFile = new File("tests.txt");
 
         Scanner fr = new Scanner(testFile);
 
         String results = "_________Postfix Test_________"+
                 "\n\nTests in format passed: true/false expected: actual: \n\n";
+
+        //calculated is the calculation, answer is expected
         int calculated = 0;
-        try {
-            calculated = PostfixCalculator.calculate(fr.nextLine());
-            results += "" + (calculated == 2);
-            results += " expected: 2" + " actual: " + calculated;
-        } catch(Exception e){
-            results += e;
-        }
+        int answer = 0;
 
-        results += "\n";
-
-        try {
-            calculated = PostfixCalculator.calculate(fr.nextLine());
-            results += "false expected: empty stack exception actual: " + calculated;
-        } catch(Exception e){
-            if(e instanceof EmptyStackException) {
-                results += "true expected: empty stack exception actual: " + e;
-            } else {
-                results += "false expected: empty stack exception actual: " + e;
+        while(fr.hasNextLine()) {
+            //try and catch exceptions, check if calculation equals the expected answer
+            try {
+                calculated = PostfixCalculator.calculate(fr.nextLine());
+                answer = fr.nextInt();
+                fr.nextLine();
+                results += "" + (calculated == answer);
+                results += " expected: " + answer + " actual: " + calculated;
+            } catch (Exception e) {
+                results += "ERROR - test: " + fr.nextLine() + " expected: " + fr.nextInt() + " ";
+                fr.nextLine();
+                results += e;
             }
+
+            //separate tests by lines
+            results += "\n";
         }
-        results += "\n";
-
-        try {
-            calculated = PostfixCalculator.calculate(fr.nextLine());
-            results += "false expected: empty stack exception actual: " + calculated;
-        } catch(Exception e) {
-            if(e instanceof EmptyStackException) {
-                results += "true expected: empty stack exception actual: " + e;
-            } else {
-                results += "false expected: empty stack exception actual: " + e;
-            }
-        }
-        results += "\n";
-
-
-        try {
-            calculated = PostfixCalculator.calculate(fr.nextLine());
-            results += "" + (calculated == -1);
-            results += " expected: -1" + " actual: " + calculated;
-        } catch(Exception e){
-            results += e;
-        }
-        results += "\n";
-
-        try{
-            calculated = PostfixCalculator.calculate(fr.nextLine());
-            results += "" + (calculated == -4);
-            results += " expected: -4" + " actual: " + calculated;
-        } catch(Exception e){
-            results += e;
-        }
-
-
-
-
-
 
 
         Scanner sys = new Scanner(System.in);

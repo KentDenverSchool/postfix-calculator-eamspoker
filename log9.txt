@@ -1,0 +1,8 @@
+_________Postfix Test_________
+
+Tests in format passed: true/false expected: actual: 
+
+true expected: 42 actual: 42
+ERROR - test: 0 9 - expected: -9 java.lang.StringIndexOutOfBoundsException: String index out of range: 0
+java.lang.StringIndexOutOfBoundsException: String index out of range: 0
+true expected: 6 actual: 6
