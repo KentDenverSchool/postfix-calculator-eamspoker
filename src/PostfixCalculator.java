@@ -17,12 +17,6 @@ public class PostfixCalculator {
     public static int calculate(String equation) {
         mainStack = new Stack();
         String[] instructions = equation.split(" ");
-        String array = "[";
-        for(int i = 0; i < instructions.length; i++){
-            array += instructions[i] + ", ";
-        }
-        array += "]";
-        System.out.println(array);
         for(int i = 0; i < instructions.length; i++){
 
             //check if the next thing entered is an operator

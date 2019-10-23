@@ -24,7 +24,7 @@ public class PostfixDriver {
         int calculated = 0;
         int answer = 0;
 
-        while(fr.hasNextLine()) {
+        while(fr.hasNextLine()){
             //try and catch exceptions, check if calculation equals the expected answer
             try {
                 calculated = PostfixCalculator.calculate(fr.nextLine());
@@ -32,7 +32,7 @@ public class PostfixDriver {
                 fr.nextLine();
                 results += "" + (calculated == answer);
                 results += " expected: " + answer + " actual: " + calculated;
-            } catch (Exception e) {
+            } catch(Exception e){
                 results += "ERROR - test: " + fr.nextLine() + " expected: " + fr.nextInt() + " ";
                 fr.nextLine();
                 results += e;
